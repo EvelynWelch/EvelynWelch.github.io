@@ -2,6 +2,12 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import PageHeader from "./components/AboutMe";
+import AboutMe from "./components/AboutMe";
+import projectCard from './components/ProjectCard';
+
+
+
 function App() {
   return (
     <div className="App">

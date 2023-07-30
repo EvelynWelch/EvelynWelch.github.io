@@ -1,36 +1,43 @@
 {
     "projectMesh": {
         "projectTitle": "Mesh",
-        "projectDescription": "",
-        "projectLink": "",
+        "projectDescription": "A webpage to go with an art installation",
+        "technologies": "Technologies used: HTML, CSS, JavaScript",
+        "projectLink": "https://github.com/enbielievable/mesh",
+        "projectAbout": "This project was entirely front end. Most of the project is animation done with JavaScript",
         "projectThumbnailSrc": "",
         "projectThumbnailAlt": ""
     },
     "projectBraveNW": {
         "projectTitle": "BraveNW",
-        "projectDescription": "",
-        "projectLink": "",
+        "projectDescription": "A website that was created to help explore the data from New World",
+        "technologies": "HTML, CSS, JavaScript, Typescript",
+        "projectLink": "https://github.com/meissnereric/BraveNW",
+        "projectAbout": "",
         "projectThumbnailSrc": "",
         "projectThumbnailAlt": ""
     },
     "projectBraveNWdb": {
-        "projectTitle": "BraveNWdb",
-        "projectDescription": "",
-        "projectLink": "",
+        "projectTitle": "BraveNW-DB",
+        "projectDescription": "A database for BraveNW",
+        "technologies": "MongoDB, Node, AND ANOTHER FORGETEN ONE",
+        "projectLink": "https://github.com/enbielievable/BraveNW-DB",
+        "projectAbout": "After creating the data exploration part of BraveNW, we decided to expand the project to help with 'Wars' a 50 v 50 pvp event that happens in the game. Unfortunately before this was finished, me and the person I was working on this with lost interest, and stopped playing the game.",
         "projectThumbnailSrc": "",
         "projectThumbnailAlt": ""
     },
     "projectStatMiner": {
         "projectTitle": "StatMiner",
-        "projectDescription": "",
-        "projectLink": "",
+        "projectDescription": "A Tesseract OCR implimentation used to extract data from Overwatch 2 scoreboards",
+        "technologies": "Python, Tesseract 5, openCV",
+        "projectLink": "https://github.com/EvelynWelch/CSCI_2906_Final_Project",
+        "projectAbout": "A program that analyzes a video of someone playing Overwatch 2, looking for a scoreboard. If it detects a scoreboard has been displayed, it uses openCV and Tesseract to extract the data shown.",
         "projectThumbnailSrc": "",
         "projectThumbnailAlt": ""
     },
-    "aboutMe": {
-
-    },
+    "aboutMe": "<p>Hi, I'm Evie. I am a recent gratuate from Southwest Technical College's Software Development program, who has been casually coding for years.</p><p>My gernal philosophy when I was teaching myself to code was turning as many unknown unknowns, into known unknowns. Coding struck me as a field where knowing what you can do, is more important than how you can do it. If you know it can be done, you can probably find how to do it.</p><p>When I decided to make turn coding into a career I registered at the local tech college to try and make sure there wasn't anything I missed, and have since graduated and am looking for my first job in the field.</p>",
     "pageHeader": {
-        
+        "github": "https://github.com/EvelynWelch",
+        "githubPersonal": "https://github.com/enbielievable"
     }
 }

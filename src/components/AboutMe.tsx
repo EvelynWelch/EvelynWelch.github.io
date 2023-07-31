@@ -1,17 +1,18 @@
 import React from "react"
 interface Props {
-    aboutMe:string, 
+    aboutMe: string, 
 }
 
-const AboutMe = function(props: Props) {
+function AboutMe(props: Props): JSX.Element {
     
-    const aboutMe = props.aboutMe
-    return 
+    
+    return (
     <div className="aboutMe">
         <article>
-            <p>{aboutMe}</p>
+            <p>{props.aboutMe}</p>
         </article>
     </div>
+    )
 }
 
 export default AboutMe

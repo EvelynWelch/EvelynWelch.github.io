@@ -2,29 +2,30 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import PageHeader from "./components/AboutMe";
+import PageHeader from "./components/PageHeader";
 import AboutMe from "./components/AboutMe";
-import projectCard from './components/ProjectCard';
+import { ProjectCard, projectCardFactory } from './components/ProjectCard';
 
 
+const data = require("./portfolioData");
 
+let projectCardData = [
+  data.projectMesh,
+  data.projectBraveNW,
+  data.projectBraveNWdb,
+  data.projectStatMiner
+]
+
+// const pc =  <ProjectCard {...data.projectStatMiner}/>
+const t = projectCardFactory(projectCardData)
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+        <PageHeader {...data.pageHeader}/> 
+        <AboutMe {...data.aboutMe}/>
+   
+      {t}
     </div>
   );
 }

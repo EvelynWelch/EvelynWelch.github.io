@@ -1,6 +1,4 @@
-import React from "react"
-
-// TODO: figure out typeing functional components.
+import { makeid } from "../utilities"
 
 interface Props {
     title: string
@@ -10,35 +8,33 @@ interface Props {
     thumbnailAlt: string
     about: string
     technologies: string
+    key?: string
+    
 }
 
-export function ProjectCard(props: Props): JSX.Element{
-    // const title = props.title
-    // const description = props.description
-    // const link = props.link
-    // const thumbnailSrc = props.thumbnailSrc
-    // const thumbnailAlt = props.thumbnailAlt
-    // const technologies = props.technologies
-    // const about = props.about
+// TODO: turn these into 2 collumns with the info on one side, and the img on the other
+// TODO: figure out how I want to display it on mobile.
 
+export function ProjectCard(props: Props): JSX.Element{
     return (
-        <div className="projectCard">
-            <article>
-                <img src={props.thumbnailSrc} alt={props.thumbnailAlt}/>
+        <div className="projectCard" key={props.key}>
+            <article>         
                 <h2><a href={props.link}>{props.title}</a></h2>
+                <img src={props.thumbnailSrc} alt={props.thumbnailAlt}/>
                 <h3>{props.description}</h3>
                 <p>{props.technologies}</p>
                 <p>{props.about}</p>
             </article>
         </div>  
     )
- 
 }
+
+// TODO: make this assign each element a key and unique id.
 
 export function projectCardFactory(projects: Array<Props>): JSX.Element[] {
     let cards: Array<JSX.Element> = []
-    let id = 0
     projects.forEach(element => { 
+        element.key = makeid(8)
         cards.push(ProjectCard(element))
     });
     return cards

@@ -1,22 +1,23 @@
-import React from "react"
-
+// TODO; get link icons instead of displaying the full web address.
 interface Props {
-    title: string,
-    github: string,
+    title: string
+    github: string
     githubPersonal: string
+    jobTitle: string
+    linkedin: string
+    email: string
 }
 
 function PageHeader(props: Props): JSX.Element {
-    console.log("wtf")
     return (
         <div className="pageHeader">
             <header>
-                <h1>{props.title}</h1>
-                <p><a href={props.github}>{props.github}</a></p>
-                <p><a href={props.githubPersonal}>{props.githubPersonal}</a></p>
-                
+                <h1>{props.title} - <span>{props.jobTitle}</span></h1>
+                <span>github: <a href={props.github}>{props.github}</a> </span>
+                <span>personal github: <a href={props.githubPersonal}>{props.githubPersonal}</a> </span>
+                <span>linkedin: <a href={props.linkedin}>{props.linkedin} </a></span>
+                <span>email:  {props.email} </span>
             </header>
-            {/* <h1>Work please</h1> */}
         </div>   
     ) 
 }

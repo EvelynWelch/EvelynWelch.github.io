@@ -1,6 +1,16 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
+  /* background-color: #282c34;
+  color: green; */
+
 }
+/* .App a:link {
+  color: rgba(169, 243, 197, 0.767);
+}
+
+.App a:visited {
+  color: rgba(76, 128, 106, 0.767);
+} */
 
 .App-logo {
   height: 40vmin;
@@ -38,6 +48,13 @@
 }
 
 
-.pageHeader {}
-.projectCard {}
-.aboutMe {}
+/* .pageHeader {} */
+.pageHeader span {
+    /* font-size: 0.75em; */
+}
+ 
+
+
+
+/* .projectCard {} */
+/* .aboutMe {} */

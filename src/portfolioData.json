@@ -5,7 +5,7 @@
         "technologies": "Technologies used: HTML, CSS, JavaScript",
         "link": "https://github.com/enbielievable/mesh",
         "about": "This project was entirely front end. Most of the project is animation done with JavaScript",
-        "thumbnailSrc": "",
+        "thumbnailSrc": "placeholder_image.jpeg",
         "thumbnailAlt": ""
     },
     "projectBraveNW": {
@@ -13,18 +13,18 @@
         "description": "A website that was created to help explore the data from New World",
         "technologies": "HTML, CSS, JavaScript, Typescript",
         "link": "https://github.com/meissnereric/BraveNW",
-        "about": "",
-        "thumbnailSrc": "",
+        "about": "This webpage was originaly built to explore data that had been scraped from the game before it was released. After the game came out we started implementing a utility for organising the 50 vs 50 pvp even that is in the game.",
+        "thumbnailSrc": "placeholder_image.jpeg",
         "thumbnailAlt": ""
     },
     "projectBraveNWdb": {
         "title": "BraveNW-DB",
         "description": "A database for BraveNW",
         "technologies": "MongoDB, Node, AND ANOTHER FORGETEN ONE",
-        "projectLink": "https://github.com/enbielievable/BraveNW-DB",
-        "projectAbout": "After creating the data exploration part of BraveNW, we decided to expand the project to help with 'Wars' a 50 v 50 pvp event that happens in the game. Unfortunately before this was finished, me and the person I was working on this with lost interest, and stopped playing the game.",
-        "projectThumbnailSrc": "",
-        "projectThumbnailAlt": ""
+        "link": "https://github.com/enbielievable/BraveNW-DB",
+        "about": "After creating the data exploration part of BraveNW, we decided to expand the project to help with 'Wars' a 50 v 50 pvp event that happens in the game. Unfortunately before this was finished, me and the person I was working on this with lost interest, and stopped playing the game.",
+        "thumbnailSrc": "placeholder_image.jpeg",
+        "thumbnailAlt": ""
     },
     "projectStatMiner": {
         "title": "StatMiner",
@@ -32,7 +32,7 @@
         "technologies": "Python, Tesseract 5, openCV",
         "link": "https://github.com/EvelynWelch/CSCI_2906_Final_Project",
         "about": "A program that analyzes a video of someone playing Overwatch 2, looking for a scoreboard. If it detects a scoreboard has been displayed, it uses openCV and Tesseract to extract the data shown.",
-        "thumbnailSrc": "",
+        "thumbnailSrc": "placeholder_image.jpeg",
         "thumbnailAlt": ""
     },
     "aboutMe": {
@@ -40,7 +40,10 @@
     },
     "pageHeader": {
         "title": "Evelyn Welch",
+        "jobTitle": "Software Developer",
         "github": "https://github.com/EvelynWelch",
-        "githubPersonal": "https://github.com/enbielievable"
+        "githubPersonal": "https://github.com/enbielievable",
+        "linkedin": "https://www.linkedin.com/in/evelyn-welch-405295248/",
+        "email": "evelynwelch.dev@gmail.com"
     }
 }

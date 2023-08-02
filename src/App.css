@@ -1,8 +1,15 @@
+@font-face {
+  font-family: "Ubuntu";
+  src: url("../public/Ubuntu/Ubuntu-Light.ttf");
+}
+
+
 .App {
   /* text-align: center; */
   /* background-color: #282c34;
   color: green; */
   margin: 15px 15px 15px 15px;
+  font-family: "Ubuntu";
 }
 
 /* Light mode */

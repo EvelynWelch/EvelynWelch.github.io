@@ -4,7 +4,7 @@
         "description": "A webpage to go with an art installation",
         "technologies": "Technologies used: HTML, CSS, JavaScript",
         "link": "https://github.com/enbielievable/mesh",
-        "about": "This project was entirely front end. Most of the project is animation done with JavaScript",
+        "about": "This utilizes JavaScript animations to create a interactive webpage to go along with a art exibit.",
         "thumbnailSrc": "placeholder_image.jpeg",
         "thumbnailAlt": ""
     },
@@ -13,14 +13,14 @@
         "description": "A website that was created to help explore the data from New World",
         "technologies": "HTML, CSS, JavaScript, Typescript",
         "link": "https://github.com/meissnereric/BraveNW",
-        "about": "This webpage was originaly built to explore data that had been scraped from the game before it was released. After the game came out we started implementing a utility for organising the 50 vs 50 pvp even that is in the game.",
+        "about": "This webpage was originaly built to explore data that had been scraped from the game before it was released. After the game came out we started implementing a utility for organising the 50 vs 50 pvp event that is in the game.",
         "thumbnailSrc": "placeholder_image.jpeg",
         "thumbnailAlt": ""
     },
     "projectBraveNWdb": {
         "title": "BraveNW-DB",
         "description": "A database for BraveNW",
-        "technologies": "MongoDB, Node, AND ANOTHER FORGETEN ONE",
+        "technologies": "MongoDB, JavaScript, node.js, express.js",
         "link": "https://github.com/enbielievable/BraveNW-DB",
         "about": "After creating the data exploration part of BraveNW, we decided to expand the project to help with 'Wars' a 50 v 50 pvp event that happens in the game. Unfortunately before this was finished, me and the person I was working on this with lost interest, and stopped playing the game.",
         "thumbnailSrc": "placeholder_image.jpeg",
@@ -36,14 +36,17 @@
         "thumbnailAlt": ""
     },
     "aboutMe": {
-        "aboutMe": "Hi, I'm Evie. I am a recent gratuate from Southwest Technical College's Software Development program, who has been casually coding for years.My gernal philosophy when I was teaching myself to code was turning as many unknown unknowns, into known unknowns. Coding struck me as a field where knowing what you can do, is more important than how you can do it. If you know it can be done, you can probably find how to do it. When I decided to make turn coding into a career I registered at the local tech college to try and make sure there wasn't anything I missed, and have since graduated and am looking for my first job in the field."
+        "aboutMe": "Hi, I'm Evie, a passionate and skilled software developer with a flair for innovation and a strong commitment to collaboration. As a trans individual, I bring a unique perspective and diversity to the tech industry, driving me to create inclusive and forward-thinking solutions. I am a recent gratuate from Southwest Technical College's Software Development program, who has been casually coding for years. When I decided to turn coding into a career I registered at the local tech college to make sure there wasn't anything I missed, and have since graduated and am looking for my first job in the field. "
     },
     "pageHeader": {
         "title": "Evelyn Welch",
         "jobTitle": "Software Developer",
         "github": "https://github.com/EvelynWelch",
+        "githubImgSrc": "github-mark/github-mark.png",
         "githubPersonal": "https://github.com/enbielievable",
+        "githubPersonalImgSrc": "github-mark/github-mark.png",
         "linkedin": "https://www.linkedin.com/in/evelyn-welch-405295248/",
+        "linkedinImgSrc": "LinkedIn-Logos/LI-Logo.png",
         "email": "evelynwelch.dev@gmail.com"
     }
 }

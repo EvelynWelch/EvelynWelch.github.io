@@ -13,10 +13,11 @@ function PageHeader(props: Props): JSX.Element {
         <div className="pageHeader">
             <header>
                 <h1>{props.title} - <span>{props.jobTitle}</span></h1>
-                <span>github: <a href={props.github}>{props.github}</a> </span>
-                <span>personal github: <a href={props.githubPersonal}>{props.githubPersonal}</a> </span>
-                <span>linkedin: <a href={props.linkedin}>{props.linkedin} </a></span>
-                <span>email:  {props.email} </span>
+                <span>{props.email}</span>
+                { <span><a href={props.github}>github</a></span> }
+                <span><a href={props.githubPersonal}>personal github</a> </span> 
+                <span><a href={props.linkedin}>LinkedIn</a></span>
+                
             </header>
         </div>   
     ) 

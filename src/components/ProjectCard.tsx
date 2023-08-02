@@ -17,13 +17,18 @@ interface Props {
 
 export function ProjectCard(props: Props): JSX.Element{
     return (
-        <div className="projectCard" key={props.key}>
-            <article>         
-                <h2><a href={props.link}>{props.title}</a></h2>
-                <img src={props.thumbnailSrc} alt={props.thumbnailAlt}/>
-                <h3>{props.description}</h3>
-                <p>{props.technologies}</p>
-                <p>{props.about}</p>
+        <div className="projectCard " key={props.key}>
+            <article>   
+                <div>     
+                    <h2><a href={props.link}>{props.title}</a></h2>
+                    <h3>{props.description}</h3>
+                    <p>{props.technologies}</p>
+                    <p>{props.about}</p>
+                </div> 
+                <div>
+                    <img src={props.thumbnailSrc} alt={props.thumbnailAlt}/>
+                </div>
+
             </article>
         </div>  
     )

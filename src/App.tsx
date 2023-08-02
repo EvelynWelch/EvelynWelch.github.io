@@ -4,16 +4,16 @@ import './App.css';
 
 import PageHeader from "./components/PageHeader";
 import AboutMe from "./components/AboutMe";
-import { ProjectCard, projectCardFactory } from './components/ProjectCard';
+import { projectCardFactory } from './components/ProjectCard';
 
 
 const data = require("./portfolioData");
 
 let projectCardData = [
+  data.projectStatMiner,
   data.projectMesh,
   data.projectBraveNW,
-  data.projectBraveNWdb,
-  data.projectStatMiner
+  data.projectBraveNWdb
 ]
 
 // const pc =  <ProjectCard {...data.projectStatMiner}/>

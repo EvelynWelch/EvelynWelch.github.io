@@ -2,8 +2,25 @@
   /* text-align: center; */
   /* background-color: #282c34;
   color: green; */
-
+  margin: 15px 15px 15px 15px;
 }
+
+/* Light mode */
+/* @media (prefers-color-scheme: light) {
+  body {
+      background-color: white;
+      color: black;
+  }
+} */
+
+/* Dark mode */
+/* @media (prefers-color-scheme: dark) {
+  body {
+      background-color: black;
+      color: white;
+  }
+} */
+
 /* .App a:link {
   color: rgba(169, 243, 197, 0.767);
 }
@@ -47,14 +64,24 @@
   }
 }
 
+.flex-container{
+  display: flex;
+}
 
 /* .pageHeader {} */
 .pageHeader span {
-    /* font-size: 0.75em; */
+    margin-right: 10px;
 }
- 
 
-
-
+.pageHeader img {
+  max-height: 24px;
+  margin-right: 10px;
+}
 /* .projectCard {} */
+
+.projectCard article{
+  display: flex;
+  justify-content: space-between;
+}
+
 /* .aboutMe {} */

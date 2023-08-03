@@ -11,8 +11,8 @@ const data = require("./portfolioData");
 
 let projectCardData = [
   data.projectStatMiner,
-  data.projectMesh,
   data.projectBraveNW,
+  data.projectMesh,
   data.projectBraveNWdb
 ]
 

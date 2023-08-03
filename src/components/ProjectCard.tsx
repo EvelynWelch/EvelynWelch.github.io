@@ -25,7 +25,7 @@ export function ProjectCard(props: Props): JSX.Element{
                     <p>{props.technologies}</p>
                     <p>{props.about}</p>
                 </div> 
-                <div>
+                <div className="img-wrapper">
                     <img src={props.thumbnailSrc} alt={props.thumbnailAlt}/>
                 </div>
 

@@ -19,7 +19,7 @@ export function ProjectCard(props: Props): JSX.Element{
     return (
         <div className="projectCard " key={props.key}>
             <article>   
-                <div>     
+                <div className="projectCard-text-wrapper">
                     <h2><a href={props.link}>{props.title}</a></h2>
                     <h3>{props.description}</h3>
                     <p>{props.technologies}</p>
@@ -28,7 +28,6 @@ export function ProjectCard(props: Props): JSX.Element{
                 <div className="img-wrapper">
                     <img src={props.thumbnailSrc} alt={props.thumbnailAlt}/>
                 </div>
-
             </article>
         </div>  
     )

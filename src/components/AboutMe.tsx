@@ -7,7 +7,7 @@ function AboutMe(props: Props): JSX.Element {
     
     
     return (
-    <div className="aboutMe">
+    <div className="aboutMe text-wrapper">
         <article>
             <h2>About me:</h2>
             <p>{props.aboutMe}</p>

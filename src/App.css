@@ -8,7 +8,9 @@
   /* text-align: center; */
   /* background-color: #282c34;
   color: green; */
-  margin: 15px 15px 15px 15px;
+  margin: auto;
+  max-width: 50em;
+  /* margin: 15px 15px 15px 15px; */
   font-family: "Ubuntu";
 }
 
@@ -71,36 +73,67 @@
   }
 }
 
+.text-wrapper {
+  max-width: 50em;
+  justify-content: left;
+}
+
+
 .flex-container {
   display: flex;
 }
 
 .img-wrapper { 
-  text-align: center;
-  /* background-color: #282c34; */
-  min-width: 25%; 
+  display: block;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  width: 16em;
+  height: 9em;
 }
 
-/* .pageHeader {} */
+
+
+.pageHeader {
+
+}
 
 .pageHeader span {
     margin-right: 10px;
+    justify-content: flex-start;
 }
 
 .pageHeader img {
   max-height: 24px;
   margin-right: 10px;
 }
-/* .projectCard {} */
 
-.projectCard article{
+
+.projectCard {
+  /* background-color: #282c34; */
+  max-width: 50em;
+
+}
+
+.projectCard-text-wrapper {
+  max-width: 34em;
+  margin-right: 5px;
+}
+
+.projectCard article {
   display: flex;
   justify-content: space-between;
+  border: 1px solid blue;
 }
 .projectCard img {
-  /* max-width: 250px; */
-  justify-content: center;
-  max-height: 250px;
+  /* justify-content: flex-end; */
+  /* margin: auto; */
+  /* max-height: 9em; */
+  /* max-width: 16em; */
+  width: 16em;
+  height: 9em;
+  /* object-fit: scale-down; */
+
 }
 
 /* .aboutMe {} */

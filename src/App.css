@@ -15,6 +15,9 @@
 
 :root {
   background-color: var(--background-color);
+  font-size: 1.5em;
+ 
+
 }
 
 a:link {
@@ -35,27 +38,23 @@ a:hover {
 
 
 
-.test {
-  filter: invert(75%);
-
-  /* filter: invert(38%) sepia(87%) saturate(4677%) hue-rotate(310deg) brightness(100%) contrast(92%) */
+.flex {
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
 }
 
 .App {
-  /* text-align: center; */
-  /* background-color: #282c34;
-  color: green; */
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  flex-direction: column;
   margin: auto;
   max-width: 50em;
-  /* margin: 15px 15px 15px 15px; */
   font-family: "Ubuntu";
-
-
   background-color: var(--background-color);
   color: var(--primary-color);
-
-
-
+  height: 1000px;
 }
 
 .link-icon {
@@ -88,64 +87,12 @@ a:hover {
   }
 } */
 
-/* .App a:link {
-  color: rgba(169, 243, 197, 0.767);
-}
-
-.App a:visited {
-  color: rgba(76, 128, 106, 0.767);
-} */
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-
-
-
-
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
 
 .text-wrapper {
   max-width: 50em;
   justify-content: left;
 }
 
-
-.flex-container {
-  display: flex;
-}
 
 .img-wrapper {
   display: block;
@@ -158,7 +105,9 @@ a:hover {
 
 
 
-.pageHeader {}
+.pageHeader {
+
+}
 
 .pageHeader h1 {
   margin: 0;
@@ -176,12 +125,8 @@ a:hover {
 
 
 .projectCard {
-  /* background-color: #282c34; */
-  max-width: 50em;
-
-  /* unvisited link */
-  
-
+  /* max-width: 50em; */
+  max-width: 100%;
 }
 
 
@@ -191,20 +136,34 @@ a:hover {
 }
 
 .projectCard article {
-  display: flex;
+  /* display: flex; */
   justify-content: space-between;
   /* border: 1px solid blue; */
 }
 
 .projectCard img {
-  /* justify-content: flex-end; */
-  /* margin: auto; */
-  /* max-height: 9em; */
-  /* max-width: 16em; */
   width: 16em;
   height: 9em;
-  /* object-fit: scale-down; */
-
 }
 
 /* .aboutMe {} */
+
+
+.thumbnail {
+  text-align: center;
+  margin: 10px;
+  padding: 5px;
+  background-color: black;
+  
+}
+
+
+.thumbnail img {
+  /* max-height: 150px; */
+  max-width: 100%;
+}
+
+.thumbnail-container {
+  display: flex;
+  justify-content: space-between;
+}

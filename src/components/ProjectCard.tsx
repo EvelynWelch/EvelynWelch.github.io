@@ -1,3 +1,4 @@
+import { generateKey } from "crypto"
 import { makeid } from "../utilities"
 
 interface Props {
@@ -12,8 +13,9 @@ interface Props {
     
 }
 
-// TODO: turn these into 2 collumns with the info on one side, and the img on the other
 // TODO: figure out how I want to display it on mobile.
+// TODO: make all the thumbnails the same size
+// TODO: add the thumbnail animations
 
 export function ProjectCard(props: Props): JSX.Element{
     return (
@@ -33,8 +35,6 @@ export function ProjectCard(props: Props): JSX.Element{
     )
 }
 
-// TODO: make this assign each element a key and unique id.
-
 export function projectCardFactory(projects: Array<Props>): JSX.Element[] {
     let cards: Array<JSX.Element> = []
     projects.forEach(element => { 
@@ -42,4 +42,54 @@ export function projectCardFactory(projects: Array<Props>): JSX.Element[] {
         cards.push(ProjectCard(element))
     });
     return cards
+}
+
+
+
+interface thumbnailProps {
+    title: string,
+    imgSrc: string,
+    imgAlt: string,
+    key?: string,
+}
+
+export function getThumbnailProps(projects: Array<Props>): Array<thumbnailProps>{
+    let thumbnailProps: thumbnailProps[] = []
+    projects.forEach(element => {
+        thumbnailProps.push({
+            title: element.title,
+            imgSrc: element.thumbnailSrc,
+            imgAlt: element.thumbnailAlt,
+        })
+    })
+    return thumbnailProps
+}
+
+
+function ProjectCardThumbnail(props: thumbnailProps) {
+    return (
+        <div className="thumbnail">
+            <img src={props.imgSrc} alt={props.imgAlt}/>
+            <h2>{props.title}</h2>
+        </div>
+    )
+}
+
+function thumbnailFactory(thumbnailData: thumbnailProps[]): JSX.Element[] {
+    console.log(thumbnailData)
+    let thumbnails: Array<JSX.Element> = []
+    thumbnailData.forEach(element => {
+        element.key = makeid(8)
+        thumbnails.push(ProjectCardThumbnail(element))
+    })
+    return thumbnails
+}
+
+export function ProjectCardThumbnails(thumbnailData: thumbnailProps[]): JSX.Element {
+    const thumbnails = thumbnailFactory(thumbnailData)
+    return (
+        <div className="thumbnail-container">
+            {thumbnails}
+        </div>
+    )
 }

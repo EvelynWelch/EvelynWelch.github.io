@@ -4,7 +4,8 @@ import './App.css';
 
 import PageHeader from "./components/PageHeader";
 import AboutMe from "./components/AboutMe";
-import { projectCardFactory, getThumbnailProps, ProjectCardThumbnails } from './components/ProjectCard';
+import { projectCardFactory, getThumbnailProps, ProjectCardThumbnails, Projects} from './components/ProjectCard';
+import { makeid } from './utilities';
 
 // TODO: figure out how to make it center without adding the "height: 1000px to the css"
 
@@ -17,8 +18,16 @@ const projectCardData = [
   data.projectMesh,
   data.projectBraveNWdb
 ]
+// create uniqe id's for projects
+projectCardData.forEach(element => element.key = makeid(5))
 
 const thumbnailData = getThumbnailProps(projectCardData)
+// thumbnailData.push({
+//   title: "About Me",
+//   imgSrc: "",
+//   imgAlt: "",
+//   key: "1234"
+// })
 
 // const pc =  <ProjectCard {...data.projectStatMiner}/>
 const projectCards = projectCardFactory(projectCardData)
@@ -29,9 +38,10 @@ function App() {
       
         <PageHeader {...data.pageHeader}/> 
         <AboutMe {...data.aboutMe}/>
-        {ProjectCardThumbnails(thumbnailData)}
-   
-      {/* {projectCards} */}
+
+  
+        {Projects(projectCardData)}
+
     
     </div>
 

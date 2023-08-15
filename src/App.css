@@ -56,7 +56,6 @@ a:hover {
   background-color: var(--background-color);
   color: var(--primary-color);
   height: 1000px;
-  background-color: aliceblue;
   overflow: scroll;
 }
 

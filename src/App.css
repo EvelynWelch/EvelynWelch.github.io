@@ -135,6 +135,8 @@ a:hover {
 
 .projectCard-text-wrapper {
   max-width: 34em;
+  text-align: left;
+  font-size: .9em;
   /* margin-right: 5px; */
 }
 
@@ -145,8 +147,8 @@ a:hover {
 }
 
 .projectCard img {
-  width: auto;
-  height: 100%;
+  width: 100%;
+  height: auto;
 }
 
 /* .aboutMe {} */
@@ -162,19 +164,19 @@ a:hover {
 
 
 .thumbnail img {
-  /* max-height: 150px; */
+  max-height: 150px;
   max-width: 100%;
 }
 
 .thumbnail-container {
   display: flex;
-
-  justify-content: space-betweens;
+  justify-content: space-around;
   margin-left: -10px;
   
 }
 
 .projects-container {
+  
   display: flex;
   
 }
@@ -184,6 +186,7 @@ a:hover {
 }
 
 .focused-project {
+  
   display: flex;
 
 }

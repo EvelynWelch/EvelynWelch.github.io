@@ -40,6 +40,7 @@ interface Props {
 // TODO: add the thumbnail animations
 // TODO: Add an "X" out button to the shown Project
 // TODO: Fix the layout of the ProjectCard
+// TODO: make the about me hide when a project is selected.
 
 export function ProjectCard(props: Props, onclick: Function, isThumbnail: boolean = true): JSX.Element {
     if (isThumbnail) {

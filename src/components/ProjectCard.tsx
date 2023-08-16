@@ -1,7 +1,10 @@
-import { generateKey } from "crypto"
-import { makeid } from "../utilities"
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+// import { Route, Routes, Outlet } from "react-router";
+import { generateKey } from "crypto"
+import { makeid, toggleElementVisibility } from "../utilities"
+import { JsxEmit } from 'typescript';
+
 
 const data = require("../portfolioData");
 
@@ -12,6 +15,13 @@ const projectCardData = [
     data.projectBraveNWdb
 ]
 
+projectCardData.forEach(e => { e.key = makeid(8) })
+
+// function assignIds(){
+//     projectCardData.forEach(e => {e.key = makeid(8)})
+// }
+// assignIds()
+
 interface Props {
     title: string
     description: string
@@ -21,6 +31,8 @@ interface Props {
     about: string
     technologies: string
     key: string
+    // isThumbnail: true
+    // onclick: Function
 }
 
 // TODO: figure out how I want to display it on mobile.
@@ -29,154 +41,103 @@ interface Props {
 // TODO: Add an "X" out button to the shown Project
 // TODO: Fix the layout of the ProjectCard
 
-export function ProjectCard(props: Props): JSX.Element {
-    return (
-        <div className="projectCard " key={props.key}>
-            <article>
-                <div className="projectCard-text-wrapper">
-                    <h2><a href={props.link}>{props.title} <span className="link-icon"> &#128279; </span>   </a></h2>
-                    <h3>{props.description}</h3>
-                    <p>{props.technologies}</p>
-                    <p>{props.about}</p>
-                </div>
-                <div className="img-wrapper">
-                    <img src={props.thumbnailSrc} alt={props.thumbnailAlt} />
-                </div>
-            </article>
-        </div>
-    )
+export function ProjectCard(props: Props, onclick: Function, isThumbnail: boolean = true): JSX.Element {
+    if (isThumbnail) {
+        return (
+            <div className="thumbnail" id={props.key} onClick={e => onclick(e)}>
+                <img src={props.thumbnailSrc} alt={props.thumbnailAlt} />
+                <h2>{props.title}</h2>
+            </div>
+        )
+    } else {
+        return (
+            <div className="projectCard " id={props.key}>
+                <article>
+                    <div className="projectCard-text-wrapper">
+                        <h2><a href={props.link}>{props.title} <span className="link-icon"> &#128279;</span></a></h2>
+                        <h3>{props.description}</h3>
+                        <p>{props.technologies}</p>
+                        <p>{props.about}</p>
+                    </div>
+                    <div className="img-wrapper">
+                        <img src={props.thumbnailSrc} alt={props.thumbnailAlt} />
+                    </div>
+                </article>
+            </div>
+        )
+    }
 }
 
-export function projectCardFactory(projects: Array<Props>): JSX.Element[] {
+export function projectCardFactory(projects: Array<Props>, onclick: Function): JSX.Element[] {
     let cards: Array<JSX.Element> = []
     projects.forEach(element => {
-        element.key = makeid(8)
-        cards.push(ProjectCard(element))
+        cards.push(ProjectCard(element, onclick))
     });
     return cards
-}
-
-
-
-interface thumbnailProps {
-    title: string,
-    imgSrc: string,
-    imgAlt: string,
-    key?: string,
-}
-
-export function getThumbnailProps(projects: Array<Props>): Array<thumbnailProps> {
-    let thumbnailProps: thumbnailProps[] = []
-    projects.forEach(element => {
-        thumbnailProps.push({
-            title: element.title,
-            imgSrc: element.thumbnailSrc,
-            imgAlt: element.thumbnailAlt,
-        })
-    })
-    return thumbnailProps
-}
-
-
-function ProjectCardThumbnail(props: Props, onclick: Function) {
-    return (
-        <div className="thumbnail" id={props.key} onClick={e => onclick(e)}>
-
-            <img src={props.thumbnailSrc} alt={props.thumbnailAlt} />
-
-            <h2>{props.title}</h2>
-        </div>
-    )
-}
-
-function thumbnailFactory(thumbnailData: Props[], onclick: Function): JSX.Element[] {
-    // console.log(typeof thumbnailData)
-    // console.log(thumbnailData.length)
-    // console.log(Array.isArray(thumbnailData))
-  
-    let thumbnails: Array<JSX.Element> = []
-    thumbnailData.forEach(element => {
-
-        thumbnails.push(ProjectCardThumbnail(element, onclick))
-    })
-    return thumbnails
-}
-
-export function ProjectCardThumbnails(thumbnailData: Props[], onclick: Function): JSX.Element {
-    const thumbnails = thumbnailFactory(thumbnailData, onclick)
-    return (
-        <div className="thumbnail-container" id="thumbail-animation-target">
-            {thumbnails}
-        </div>
-    )
 }
 
 // The animation should pop off whatever project got clicked on
 // minimize the about me
 // shrink the thumbnail and move them inline with the "about me" <h2>
-
-// export function ProjectCardThumbnailAnimations(targetKey: string, projectData: Array<Props>) {
-//     const PROJECT_DISPLAY_DIV = "project-display"
-//     const target = document.getElementById(targetKey)
-
-//     target!.style.display = "none"
-//     const targetData = projectData.find((element) => element.key = targetKey)
-//     const projectContainer = document.getElementById(PROJECT_DISPLAY_DIV)
-//     const project = ProjectCard(targetData!)
-
-// }
-
-// TODO: find where to get the mouse event type.
-// export function thumbnailOnClick(e: any) {
-
-//     const key = e.currentTarget.id
-
-//     ProjectCardThumbnailAnimations(key, projectCardData)
-// }
-
-
-
-
 export function Projects(props: Array<Props>): JSX.Element {
-    const [projectData, setProjectData] = useState(props);
+    // const [projectData, setProjectData] = useState(props);
     const [focusedProject, setFocusedProject] = useState<JSX.Element | null>(null)
     const [focusedProjectKey, setFocusedProjectKey] = useState<string | null>(null)
-    // console.log(projectData) 
+    const projectData = props
 
-    const onClick = (e: any) => {
-        // unhide element if one is selected
-        if(focusedProject != null) {
-        //    let k = focusedProject.key
-            let hiddenThumbnail = document.getElementById(focusedProjectKey!)
-            hiddenThumbnail!.style.display = "block"
-            console.log(focusedProject.props)
-        }
+    // create an array of all the thumbnails
+    let projects: JSX.Element[] = projectCardFactory(
+        projectData,
+        (e: any) => {
+            // get the clicked element, and its id
+            let clickedElement = e.currentTarget
+            let clickedId = clickedElement.id
 
-        // hide the clicked element
-        let clickedElement = e.currentTarget
-        // console.log(clickedElement)
-        clickedElement.style.display = "none"
 
-        let clickedId = clickedElement.id
-        setFocusedProjectKey(clickedId)
-        // console.log(clickedId)
-
-        for (let i = 0; i < projectData.length; i++) {
-            if(projectData[i].key == clickedId){
-                // console.log("id found")
-                setFocusedProject(ProjectCard(projectData[i]))
+            // after a Thumbnail is clicked if there is a hidden element, unhide it
+            console.log("focusedProjectKey to check: " + focusedProjectKey)
+            if (focusedProjectKey != null) {
+                console.log("visibility toggle on: " + focusedProjectKey)
+                // toggleElementVisibility(focusedProjectKey!)
+                let old = document.getElementById(focusedProjectKey)
+                if (old!.classList.contains("hidden")) {
+                    old!.classList.remove("hidden")
+                }
             }
-        }
-       
-        // setFocusedProject(ProjectCard(data!))
-    }
 
-    let thumbnails = ProjectCardThumbnails(projectData, onClick)
+            toggleElementVisibility(clickedId)
+            setFocusedProjectKey(clickedId)
+
+
+            // find that id in projects array and set it as the focused project
+            for (let i = 0; i < projectData.length; i++) {
+                if (projectData[i].key == clickedId) {
+                    // console.log("id found")
+                    let nd = projectCardData[i]
+                    // nd.key = makeid(5)
+                    setFocusedProject(ProjectCard(
+                        nd,
+                        () => { console.log("this should be changed to the the close with 'X'") },
+                        false,
+                    ))
+                    // projects.push(focusedProject)
+                    // setFocusedProject(ProjectCard(projectData[i], () => {console.log("this should be changed to the the close with 'X'")}))
+                    console.log(projects)
+                    break;
+                }
+            }
+            // hide the clicked Thumbnail                 
+        }
+    )
 
     return (
-        <div className="projects-container">
-            {thumbnails}
-            <div id="focussed-project">
+        <div>
+          
+            <div className="projects-container">
+            {projects}
+
+            </div>
+            <div className='focused-project'>
                 {focusedProject}
             </div>
         </div>

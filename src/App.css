@@ -129,9 +129,17 @@ a:hover {
 .projectCard {
   /* max-width: 50em; */
   /* max-width: 100%; */
+  position: relative;
+  display: flex;
  
 }
-
+.projectCard-X {
+  position: absolute;
+  float: right;
+  width: 100%;
+  text-align: right;
+  padding: 10px;
+}
 
 .projectCard-text-wrapper {
   max-width: 34em;

@@ -15,12 +15,8 @@ const projectCardData = [
     data.projectBraveNWdb
 ]
 
+// create id's 
 projectCardData.forEach(e => { e.key = makeid(8) })
-
-// function assignIds(){
-//     projectCardData.forEach(e => {e.key = makeid(8)})
-// }
-// assignIds()
 
 interface Props {
     title: string
@@ -31,12 +27,7 @@ interface Props {
     about: string
     technologies: string
     key: string
-    // isThumbnail: true
-    // onclick: Function
 }
-
-
-
 
 // TODO: figure out how I want to display it on mobile.
 // TODO: make all the thumbnails the same size
@@ -56,6 +47,9 @@ export function ProjectCard(props: Props, onclick: Function, isThumbnail: boolea
     } else {
         return (
             <div className="projectCard " id={props.key}>
+                <div className='projectCard-X' onClick={e => onclick(e)}>
+                    <span>X</span>
+                </div>
                 <article>
                     <div className="projectCard-text-wrapper">
                         <h2><a href={props.link}>{props.title} <span className="link-icon"> &#128279;</span></a></h2>
@@ -85,9 +79,9 @@ export function projectCardFactory(projects: Array<Props>, onclick: Function): J
 // shrink the thumbnail and move them inline with the "about me" <h2>
 export function Projects(props: Array<Props>): JSX.Element {
     const [focusedProject, setFocusedProject] = useState<JSX.Element | null>(null)
-    const [focusedProjectKey, setFocusedProjectKey] = useState<string | null>(null)
+    // const [focusedProjectKey, setFocusedProjectKey] = useState<string | null>(null)
     const projectData = props
-
+    let focusedProjectKey: string | null = null
     // create an array of all the thumbnails
     let projects: JSX.Element[] = projectCardFactory(
         projectData,
@@ -95,20 +89,16 @@ export function Projects(props: Array<Props>): JSX.Element {
             // get the clicked element, and its id
             let clickedElement = e.currentTarget
             let clickedId = clickedElement.id
-
             // after a Thumbnail is clicked if there is a hidden element, unhide it
             console.log("focusedProjectKey to check: " + focusedProjectKey)
             if (focusedProjectKey != null) {
                 console.log("visibility toggle on: " + focusedProjectKey)
-                // toggleElementVisibility(focusedProjectKey!)
-                let old = document.getElementById(focusedProjectKey)
-                if (old!.classList.contains("hidden")) {
-                    old!.classList.remove("hidden")
-                }
+                toggleElementVisibility(focusedProjectKey!)
             }
 
             toggleElementVisibility(clickedId)
-            setFocusedProjectKey(clickedId)
+            // setFocusedProjectKey(clickedId)
+            focusedProjectKey = clickedId
 
             // find that id in projects array and set it as the focused project
             for (let i = 0; i < projectData.length; i++) {
@@ -118,7 +108,10 @@ export function Projects(props: Array<Props>): JSX.Element {
                     // nd.key = makeid(5)
                     setFocusedProject(ProjectCard(
                         nd,
-                        () => { console.log("this should be changed to the the close with 'X'") },
+                        () => {
+                            setFocusedProject(null)
+                            focusedProjectKey = null
+                        },
                         false,
                     ))
                     break;
@@ -127,10 +120,22 @@ export function Projects(props: Array<Props>): JSX.Element {
         }
     )
     // hide about me
-    if (focusedProjectKey == null) {
+    if (focusedProject == null) {
         showAboutMe()
     } else {
         hideAboutMe()
+    }
+    if(!focusedProject){
+        projectData.forEach(element => {
+            if(element.key){
+                let htmlElement = document.getElementById(element.key)
+                if(htmlElement) {
+                    if(htmlElement.classList.contains(HIDDEN_CLASS_NAME)){
+                        htmlElement.classList.remove(HIDDEN_CLASS_NAME)
+                    }
+                }
+            }
+        })
     }
     return (
         <div>

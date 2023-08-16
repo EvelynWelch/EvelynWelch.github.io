@@ -12,12 +12,11 @@ export function makeid(length: number): string {
   return result;
 }
 
+// TODO: figure out how to generate this class with javascript so it works without needing to add a class manually
+export const HIDDEN_CLASS_NAME = "hidden"
+
 export function toggleElementVisibility(elementId: string) {
-  const HIDDEN_CLASS_NAME = "hidden"
   let element = document.getElementById(elementId)
-  console.log("element: ")
-  // console.log(element)
-  
   if (element) {
     console.log(element.classList)
     if(element.classList.contains(HIDDEN_CLASS_NAME)){

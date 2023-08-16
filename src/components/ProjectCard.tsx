@@ -1,9 +1,9 @@
 
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 // import { Route, Routes, Outlet } from "react-router";
-import { generateKey } from "crypto"
-import { makeid, toggleElementVisibility } from "../utilities"
-import { JsxEmit } from 'typescript';
+import { makeid, toggleElementVisibility, HIDDEN_CLASS_NAME } from "../utilities"
+
+import { hideAboutMe, showAboutMe } from './AboutMe';
 
 
 const data = require("../portfolioData");
@@ -34,6 +34,9 @@ interface Props {
     // isThumbnail: true
     // onclick: Function
 }
+
+
+
 
 // TODO: figure out how I want to display it on mobile.
 // TODO: make all the thumbnails the same size
@@ -81,7 +84,6 @@ export function projectCardFactory(projects: Array<Props>, onclick: Function): J
 // minimize the about me
 // shrink the thumbnail and move them inline with the "about me" <h2>
 export function Projects(props: Array<Props>): JSX.Element {
-    // const [projectData, setProjectData] = useState(props);
     const [focusedProject, setFocusedProject] = useState<JSX.Element | null>(null)
     const [focusedProjectKey, setFocusedProjectKey] = useState<string | null>(null)
     const projectData = props
@@ -93,7 +95,6 @@ export function Projects(props: Array<Props>): JSX.Element {
             // get the clicked element, and its id
             let clickedElement = e.currentTarget
             let clickedId = clickedElement.id
-
 
             // after a Thumbnail is clicked if there is a hidden element, unhide it
             console.log("focusedProjectKey to check: " + focusedProjectKey)
@@ -109,7 +110,6 @@ export function Projects(props: Array<Props>): JSX.Element {
             toggleElementVisibility(clickedId)
             setFocusedProjectKey(clickedId)
 
-
             // find that id in projects array and set it as the focused project
             for (let i = 0; i < projectData.length; i++) {
                 if (projectData[i].key == clickedId) {
@@ -121,26 +121,23 @@ export function Projects(props: Array<Props>): JSX.Element {
                         () => { console.log("this should be changed to the the close with 'X'") },
                         false,
                     ))
-                    // projects.push(focusedProject)
-                    // setFocusedProject(ProjectCard(projectData[i], () => {console.log("this should be changed to the the close with 'X'")}))
-                    console.log(projects)
                     break;
                 }
             }
-            // hide the clicked Thumbnail                 
         }
     )
-
+    // hide about me
+    if (focusedProjectKey == null) {
+        showAboutMe()
+    } else {
+        hideAboutMe()
+    }
     return (
         <div>
-          
             <div className="projects-container">
-            {projects}
-
+                {projects}
             </div>
-            
-                {focusedProject}
-            
+            {focusedProject}
         </div>
     )
 }

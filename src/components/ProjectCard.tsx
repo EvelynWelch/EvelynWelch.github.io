@@ -91,7 +91,14 @@ export function Projects(props: Array<Props>): JSX.Element {
             let clickedId = clickedElement.id 
             focusedProjectKey = clickedId
             toggleElementVisibility(clickedId)
-            
+
+            // unhide all elements that aren't the focused one
+            projectData.forEach(element => {
+                if(element.key && element.key != focusedProjectKey){
+                    unhideElement(element.key)
+                }
+            })
+
             // find that id in projects array and set it as the focused project 
             for (let i = 0; i < projectData.length; i++) {
                 if (projectData[i].key == clickedId) {
@@ -129,13 +136,8 @@ export function Projects(props: Array<Props>): JSX.Element {
                 }
             }
         })
-    } else {
-        projectData.forEach(element => {
-            if(element.key && element.key != focusedProjectKey){
-                unhideElement(element.key)
-            }
-        })
-    }
+    } 
+
     return (
         <div>
             <div className="projects-container">

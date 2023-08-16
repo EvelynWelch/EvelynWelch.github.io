@@ -128,7 +128,8 @@ a:hover {
 
 .projectCard {
   /* max-width: 50em; */
-  max-width: 100%;
+  /* max-width: 100%; */
+ 
 }
 
 
@@ -138,14 +139,14 @@ a:hover {
 }
 
 .projectCard article {
-  /* display: flex; */
+  display: flex;
   justify-content: space-between;
   /* border: 1px solid blue; */
 }
 
 .projectCard img {
-  width: 16em;
-  height: 9em;
+  width: auto;
+  height: 100%;
 }
 
 /* .aboutMe {} */
@@ -175,7 +176,7 @@ a:hover {
 
 .projects-container {
   display: flex;
-  /* flex-wrap: wrap; */
+  
 }
 
 .hidden  {

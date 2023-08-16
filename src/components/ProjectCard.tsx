@@ -137,9 +137,9 @@ export function Projects(props: Array<Props>): JSX.Element {
             {projects}
 
             </div>
-            <div className='focused-project'>
+            
                 {focusedProject}
-            </div>
+            
         </div>
     )
 }

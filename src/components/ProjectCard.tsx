@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 // import { Route, Routes, Outlet } from "react-router";
-import { makeid, toggleElementVisibility, HIDDEN_CLASS_NAME } from "../utilities"
+import { makeid, toggleElementVisibility, HIDDEN_CLASS_NAME, unhideElement } from "../utilities"
 
 import { hideAboutMe, showAboutMe } from './AboutMe';
 
@@ -79,35 +79,26 @@ export function projectCardFactory(projects: Array<Props>, onclick: Function): J
 // shrink the thumbnail and move them inline with the "about me" <h2>
 export function Projects(props: Array<Props>): JSX.Element {
     const [focusedProject, setFocusedProject] = useState<JSX.Element | null>(null)
-    // const [focusedProjectKey, setFocusedProjectKey] = useState<string | null>(null)
+    
     const projectData = props
     let focusedProjectKey: string | null = null
-    // create an array of all the thumbnails
+
     let projects: JSX.Element[] = projectCardFactory(
         projectData,
         (e: any) => {
             // get the clicked element, and its id
             let clickedElement = e.currentTarget
-            let clickedId = clickedElement.id
-            // after a Thumbnail is clicked if there is a hidden element, unhide it
-            console.log("focusedProjectKey to check: " + focusedProjectKey)
-            if (focusedProjectKey != null) {
-                console.log("visibility toggle on: " + focusedProjectKey)
-                toggleElementVisibility(focusedProjectKey!)
-            }
-
-            toggleElementVisibility(clickedId)
-            // setFocusedProjectKey(clickedId)
+            let clickedId = clickedElement.id 
             focusedProjectKey = clickedId
-
-            // find that id in projects array and set it as the focused project
+            toggleElementVisibility(clickedId)
+            
+            // find that id in projects array and set it as the focused project 
             for (let i = 0; i < projectData.length; i++) {
                 if (projectData[i].key == clickedId) {
-                    // console.log("id found")
-                    let nd = projectCardData[i]
-                    // nd.key = makeid(5)
+                    let data = {...projectData[i]}
+                    data.key = makeid(5)
                     setFocusedProject(ProjectCard(
-                        nd,
+                        data,
                         () => {
                             setFocusedProject(null)
                             focusedProjectKey = null
@@ -119,12 +110,14 @@ export function Projects(props: Array<Props>): JSX.Element {
             }
         }
     )
+
     // hide about me
     if (focusedProject == null) {
         showAboutMe()
     } else {
         hideAboutMe()
     }
+
     if(!focusedProject){
         projectData.forEach(element => {
             if(element.key){
@@ -134,6 +127,12 @@ export function Projects(props: Array<Props>): JSX.Element {
                         htmlElement.classList.remove(HIDDEN_CLASS_NAME)
                     }
                 }
+            }
+        })
+    } else {
+        projectData.forEach(element => {
+            if(element.key && element.key != focusedProjectKey){
+                unhideElement(element.key)
             }
         })
     }

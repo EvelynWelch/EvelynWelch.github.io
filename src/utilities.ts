@@ -19,7 +19,7 @@ export function toggleElementVisibility(elementId: string) {
   let element = document.getElementById(elementId)
   if (element) {
     console.log(element.classList)
-    if(element.classList.contains(HIDDEN_CLASS_NAME)){
+    if (element.classList.contains(HIDDEN_CLASS_NAME)) {
       console.log("element is hidden, unhiding it")
       element.classList.remove(HIDDEN_CLASS_NAME)
       console.log(element.classList)
@@ -29,9 +29,20 @@ export function toggleElementVisibility(elementId: string) {
   }
 }
 
-// export function destoryElement(elementId: string) {
-//   let element = document.getElementById(elementId)
-//   if(element){
-//     element.remove()
-//   }
-// }
+export function unhideElement(elementId: string) {
+  let element = document.getElementById(elementId)
+  if (element) {
+    if (element.classList.contains(HIDDEN_CLASS_NAME)) {
+      element.classList.remove(HIDDEN_CLASS_NAME)
+    }
+  }
+}
+
+export function hideElement(elementId: string) {
+  let element = document.getElementById(elementId)
+  if (element) {
+    if (!element.classList.contains(HIDDEN_CLASS_NAME)) {
+      element.classList.remove(HIDDEN_CLASS_NAME)
+    }
+  }
+}

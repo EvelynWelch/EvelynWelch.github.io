@@ -46,7 +46,6 @@ a:hover {
 
 .App {
   display: flex;
-  align-items: center;
   justify-content: center; 
   flex-direction: column;
   text-align: center;
@@ -180,15 +179,15 @@ a:hover {
 .thumbnail-container {
   display: flex;
   /* flex-grow: 1; */
+  
   justify-content: space-between;  
 }
 
 .projects-container {
-  
+   
   display: flex;
   /* justify-content: space-between;   */
   flex-direction: column;
-
   /* flex-grow: 1; */
 }
 

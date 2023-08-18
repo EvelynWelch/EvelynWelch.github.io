@@ -131,7 +131,7 @@ a:hover {
   /* max-width: 100%; */
   position: relative;
   display: flex;
-  /* background-color: rgb(20, 34, 39); */
+  background-color: rgb(20, 34, 39);
  
 }
 .projectCard-X {
@@ -164,7 +164,7 @@ a:hover {
 
 .thumbnail {
   text-align: center;
-  margin: 10px;
+  /* margin: 10px; */
   /* display: flex; */
   padding: 5px;
   background-color: black;
@@ -179,15 +179,17 @@ a:hover {
 
 .thumbnail-container {
   display: flex;
-  justify-content: space-around;
-  margin-left: -10px;
-  
+  /* flex-grow: 1; */
+  justify-content: space-between;  
 }
 
 .projects-container {
   
   display: flex;
-  
+  /* justify-content: space-between;   */
+  flex-direction: column;
+
+  /* flex-grow: 1; */
 }
 
 .hidden  {
@@ -196,7 +198,7 @@ a:hover {
 }
 
 .focused-project {
-  
+  background-color: rgb(20, 34, 39);
   display: flex;
 
 }
@@ -207,5 +209,4 @@ a:hover {
 
 .selected-project {
   background-color: rgb(20, 34, 39);
-  /* border: 5px solid white; */
 }

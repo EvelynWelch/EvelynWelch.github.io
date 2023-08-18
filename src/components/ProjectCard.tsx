@@ -79,7 +79,7 @@ export function projectCardFactory(projects: Array<Props>, onclick: Function): J
 // shrink the thumbnail and move them inline with the "about me" <h2>
 export function Projects(props: Array<Props>): JSX.Element {
     const [focusedProject, setFocusedProject] = useState<JSX.Element | null>(null)
-    
+
     const projectData = props
     let focusedProjectKey: string | null = null
 
@@ -88,25 +88,25 @@ export function Projects(props: Array<Props>): JSX.Element {
         (e: any) => {
             // get the clicked element, and its id
             let clickedElement = e.currentTarget
-            let clickedId = clickedElement.id 
+            let clickedId = clickedElement.id
             focusedProjectKey = clickedId
 
             // add the selected-project class
-            clickedElement.classList.add("selected-project")    
+            clickedElement.classList.add("selected-project")
             // remove selected-project non selected one
             projectData.forEach(element => {
-                if(element.key != clickedId){
+                if (element.key != clickedId) {
                     let elem = document.getElementById(element.key)
-                    if(elem!.classList.contains("selected-project")){
+                    if (elem!.classList.contains("selected-project")) {
                         elem!.classList.remove("selected-project")
                     }
                 }
-            })           
+            })
 
             // find that id in projects array and set it as the focused project 
             for (let i = 0; i < projectData.length; i++) {
                 if (projectData[i].key == clickedId) {
-                    let data = {...projectData[i]}
+                    let data = { ...projectData[i] }
                     data.key = makeid(5)
                     setFocusedProject(ProjectCard(
                         data,
@@ -129,25 +129,27 @@ export function Projects(props: Array<Props>): JSX.Element {
         hideAboutMe()
     }
 
-    if(!focusedProject){
+    if (!focusedProject) {
         projectData.forEach(element => {
-            if(element.key){
+            if (element.key) {
                 let htmlElement = document.getElementById(element.key)
-                if(htmlElement) {
-                    if(htmlElement.classList.contains("selected-project")){
+                if (htmlElement) {
+                    if (htmlElement.classList.contains("selected-project")) {
                         htmlElement.classList.remove("selected-project")
                     }
                 }
             }
         })
-    } 
+    }
 
     return (
-        <div>
-            <div className="projects-container">
+        <div className='projects-container'>
+            <div className="thumbnail-container">
                 {projects}
             </div>
-            {focusedProject}
+            <div className="selected-project">
+                {focusedProject}
+            </div>
         </div>
     )
 }

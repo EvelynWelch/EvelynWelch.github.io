@@ -135,10 +135,13 @@ a:hover {
 }
 .projectCard-X {
   position: absolute;
-  float: right;
+  /* float: right; */
   width: 100%;
   text-align: right;
   padding: 10px;
+}
+.projectCard-X span {
+  margin-right: 20px;
 }
 
 .projectCard-text-wrapper {

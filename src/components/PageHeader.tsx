@@ -13,14 +13,13 @@ function PageHeader(props: Props): JSX.Element {
         <div className="pageHeader">
             <header>
                 <h1>{props.title} - <span>{props.jobTitle}</span></h1>
-                <span>{props.email}</span>
-                { <span><a href={props.github}>github <span className="link-icon"> &#128279; </span> </a></span> }
-                <span><a href={props.githubPersonal}>personal github <span className="link-icon"> &#128279; </span> </a> </span> 
+                <span>{props.email} </span>
+                <span><a href={props.github}>github <span className="link-icon"> &#128279; </span> </a></span>
+                <span><a href={props.githubPersonal}>personal github <span className="link-icon"> &#128279; </span> </a> </span>
                 <span><a href={props.linkedin}>LinkedIn <span className="link-icon"> &#128279; </span> </a></span>
-                
             </header>
-        </div>   
-    ) 
+        </div>
+    )
 }
 
 export default PageHeader

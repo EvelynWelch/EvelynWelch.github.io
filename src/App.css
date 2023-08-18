@@ -16,8 +16,7 @@
 :root {
   background-color: var(--background-color);
   font-size: 1.5em;
- 
-
+  background-color: black;
 }
 
 a:link {
@@ -96,12 +95,14 @@ a:hover {
 
 
 .img-wrapper {
-  display: block;
+  /* display: flex; */
   margin: auto;
   justify-content: center;
-  align-items: center;
-  width: 16em;
-  height: 9em;
+  /* align-items: center; */
+  /* max-width: 16em; */
+  /* height: auto; */
+  align-self: flex-end;
+  padding: 10px
 }
 
 
@@ -123,7 +124,18 @@ a:hover {
   max-height: 24px;
   /* margin-right: 10px; */
 }
-
+.projectCard-X {
+  position: absolute;
+  /* float: right; */
+  width: 100%;
+  text-align: right;
+  /* padding: 10px; */
+  font-size: 1.25em;
+  
+}
+.projectCard-X button {
+  padding: 5px 10px 5px 10px;
+}
 
 .projectCard {
   /* max-width: 50em; */
@@ -131,18 +143,11 @@ a:hover {
   position: relative;
   display: flex;
   background-color: rgb(20, 34, 39);
+  /* justify-content: space-around; */
+  /* margin-right: 20px; */
  
 }
-.projectCard-X {
-  position: absolute;
-  /* float: right; */
-  width: 100%;
-  text-align: right;
-  padding: 10px;
-}
-.projectCard-X span {
-  margin-right: 20px;
-}
+
 
 .projectCard-text-wrapper {
   max-width: 34em;
@@ -159,7 +164,8 @@ a:hover {
 
 .projectCard img {
   width: 100%;
-  height: auto;
+  align-self: right;
+  /* height: 100%; */
 }
 
 /* .aboutMe {} */
@@ -171,6 +177,7 @@ a:hover {
   padding: 5px;
   background-color: black;
   /* min-width: 20%; */
+  border-radius: 10px;
 }
 
 
@@ -202,8 +209,8 @@ a:hover {
 .focused-project {
   background-color: rgb(20, 34, 39);
   display: flex;
-
 }
+
 .break {
   flex-basis: 100%;
   width: 0px;
@@ -211,4 +218,5 @@ a:hover {
 
 .selected-project {
   background-color: rgb(20, 34, 39);
+  border-radius: 10px 10px 0px 0px;
 }

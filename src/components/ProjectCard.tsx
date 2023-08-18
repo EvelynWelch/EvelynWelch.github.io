@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 // import { Route, Routes, Outlet } from "react-router";
-import { makeid, toggleElementVisibility, HIDDEN_CLASS_NAME, unhideElement } from "../utilities"
+import { makeid } from "../utilities"
 
 import { hideAboutMe, showAboutMe } from './AboutMe';
 
@@ -48,7 +48,7 @@ export function ProjectCard(props: Props, onclick: Function, isThumbnail: boolea
         return (
             <div className="projectCard " id={props.key}>
                 <div className='projectCard-X' onClick={e => onclick(e)}>
-                    <span>X</span>
+                    <button name="close-focused-project">X</button>
                 </div>
                 <article>
                     <div className="projectCard-text-wrapper">
@@ -108,6 +108,7 @@ export function Projects(props: Array<Props>): JSX.Element {
                 if (projectData[i].key == clickedId) {
                     let data = { ...projectData[i] }
                     data.key = makeid(5)
+                    // make the 'x' close the focused project
                     setFocusedProject(ProjectCard(
                         data,
                         () => {
@@ -147,7 +148,7 @@ export function Projects(props: Array<Props>): JSX.Element {
             <div className="thumbnail-container">
                 {projects}
             </div>
-            <div className="selected-project">
+            <div className="">
                 {focusedProject}
             </div>
         </div>

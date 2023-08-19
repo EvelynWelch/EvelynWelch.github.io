@@ -36,11 +36,7 @@
         "thumbnailAlt": "a picture of a Overwatch 2 scoreboard with boxes drawn around sections, and the numbers in those sections."
     },
     "aboutMe": {
-        "aboutMe": "Hi, I'm Evie, a passionate and skilled software developer with a flair for innovation and a strong commitment to collaboration. As a trans individual, I bring a unique perspective and diversity to the tech industry, driving me to create inclusive and forward-thinking solutions. I am a recent gratuate from Southwest Technical College's Software Development program, who has been casually coding for years. When I decided to turn coding into a career I registered at the local tech college to make sure there wasn't anything I missed, and have since graduated and am looking for my first job in the field. "
-    },
-    "pageHeader": {
-        "title": "Evelyn Welch",
-        "jobTitle": "Software Developer",
+        "aboutMe": "Hi, I'm Evie, a passionate and skilled software developer with a flair for innovation and a strong commitment to collaboration. As a trans individual, I bring a unique perspective and diversity to the tech industry, driving me to create inclusive and forward-thinking solutions. I am a recent gratuate from Southwest Technical College's Software Development program, who has been casually coding for years. When I decided to turn coding into a career I registered at the local tech college to make sure there wasn't anything I missed, and have since graduated and am looking for my first job in the field.",
         "github": "https://github.com/EvelynWelch",
         "githubImgSrc": "github-mark/github-mark.png",
         "githubPersonal": "https://github.com/enbielievable",
@@ -48,5 +44,10 @@
         "linkedin": "https://www.linkedin.com/in/evelyn-welch-405295248/",
         "linkedinImgSrc": "LinkedIn-Logos/LI-Logo.png",
         "email": "evelynwelch.dev@gmail.com"
+    },
+    "pageHeader": {
+        "title": "Evelyn Welch",
+        "jobTitle": "Software Developer"
+        
     }
 }

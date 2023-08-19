@@ -55,6 +55,8 @@ a:hover {
   color: var(--primary-color);
   height: 1000px;
   overflow: scroll;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .link-icon {
@@ -69,7 +71,9 @@ a:hover {
   margin-bottom: -0.15em;
 }
 
-
+a::before {
+  content: ' 🔗';
+}
 
 /* Light mode */
 /* @media (prefers-color-scheme: light) {
@@ -107,6 +111,7 @@ a:hover {
 
 
 
+
 .pageHeader {
 
 }
@@ -124,6 +129,18 @@ a:hover {
   max-height: 24px;
   /* margin-right: 10px; */
 }
+
+
+
+.contact-info {
+  display: flex;
+  justify-content: space-around;
+}
+
+
+
+
+
 .projectCard-X {
   position: absolute;
   /* float: right; */
@@ -167,8 +184,17 @@ a:hover {
   align-self: right;
   /* height: 100%; */
 }
-
-/* .aboutMe {} */
+.contact-info span {
+  padding: 5px 5px 5px 5px;
+}
+.aboutMe {
+  text-align: left;
+}
+.aboutMe-button {
+  /* background-color: black; */
+  padding-top: 5px;
+  /* padding: 10px; */
+}
 
 .thumbnail {
   text-align: center;

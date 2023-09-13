@@ -36,6 +36,7 @@ export function getAboutMe() {
     return document.getElementById(ABOUT_ME_ID)
 }
 
+// TODO: add an x to close the about me
 function AboutMe(props: Props): JSX.Element {
     const [isExpanded, setIsExpanded] = useState(true)
     // const [triggerRender, setTriggerRender] = useState(1)

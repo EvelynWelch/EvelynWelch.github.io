@@ -53,7 +53,10 @@
     },
     "pageHeader": {
         "title": "Evelyn Welch",
-        "jobTitle": "Software Developer"
+        "jobTitle": "Software Developer",
+        "github": "https://github.com/EvelynWelch",
+        "githubPersonal": "https://github.com/enbielievable",
+        "linkedinImgSrc": "LinkedIn-Logos/LI-Logo.png"
         
     }
 }

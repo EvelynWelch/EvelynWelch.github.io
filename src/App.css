@@ -34,13 +34,12 @@ a:hover {
   color: var(--tertiary-color);
 }
 
-
-
-
-.flex {
-  /* display: flex; */
-  /* align-items: center; */
-  /* justify-content: center; */
+.text-align-left {
+  text-align: left;
+}
+.links span{
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .App {
@@ -75,22 +74,6 @@ a::before {
   content: ' 🔗';
 }
 
-/* Light mode */
-/* @media (prefers-color-scheme: light) {
-  body {
-      background-color: white;
-      color: black;
-  }
-} */
-
-/* Dark mode */
-/* @media (prefers-color-scheme: dark) {
-  body {
-      background-color: black;
-      color: white;
-  }
-} */
-
 
 .text-wrapper {
   max-width: 50em;
@@ -110,11 +93,6 @@ a::before {
 }
 
 
-
-
-.pageHeader {
-
-}
 
 .pageHeader h1 {
   margin: 0;
@@ -149,9 +127,11 @@ a::before {
   /* padding: 10px; */
   font-size: 1.25em;
   
+  
 }
 .projectCard-X button {
   padding: 5px 10px 5px 10px;
+  margin-right: 10px;
 }
 
 .projectCard {
@@ -160,6 +140,10 @@ a::before {
   position: relative;
   display: flex;
   background-color: rgb(20, 34, 39);
+  margin-left: 5px;
+  margin-right: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
   /* justify-content: space-around; */
   /* margin-right: 20px; */
  
@@ -199,11 +183,14 @@ a::before {
 .thumbnail {
   text-align: center;
   /* margin: 10px; */
+  margin-left: 5px;
+  margin-right: 5px;
   /* display: flex; */
   padding: 5px;
   background-color: black;
   /* min-width: 20%; */
   border-radius: 10px;
+  flex: 1 1 0px;
 }
 
 
@@ -220,8 +207,10 @@ a::before {
 }
 
 .projects-container {
-   
+  
   display: flex;
+  
+  
   /* justify-content: space-between;   */
   flex-direction: column;
   /* flex-grow: 1; */

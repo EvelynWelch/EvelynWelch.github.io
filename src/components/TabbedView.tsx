@@ -1,6 +1,7 @@
 // A simple tabbed view react component.
 
 import { useState } from 'react';
+import { forEachChild } from 'typescript';
 
 // create a random string of length n for unique id's
 function makeid(length: number): string {
@@ -9,11 +10,11 @@ function makeid(length: number): string {
     const charactersLength = characters.length;
     let counter = 0;
     while (counter < length) {
-      result += characters.charAt(Math.floor(Math.random() * charactersLength));
-      counter += 1;
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        counter += 1;
     }
     return result;
-  }
+}
 
 interface TabProps {
     title: string
@@ -26,12 +27,23 @@ function Tab(props: TabProps, onclick: Function): JSX.Element {
     // The onclick will toggle the display of TabBody
     return (
         <div className="thumbnail" id={props.key} key={props.key} onClick={e => onclick(e)}>
-            <img src={props.thumbnailSrc} alt={props.thumbnailAlt} />
-            <h2>{props.title}</h2>
+            {props.thumbnailSrc != null &&
+                <img src={props.thumbnailSrc} alt={props.thumbnailAlt} />
+            }
+            {props.thumbnailSrc != null &&
+                <h2 >{props.title}</h2>
+            }
+
+            {props.thumbnailSrc == null &&
+            
+                <h2 className='text-large'>{props.title}</h2>
+            }
+
+            
+
         </div>
     )
 }
-
 
 interface TabBodyProps {
     title: string
@@ -42,7 +54,6 @@ interface TabBodyProps {
     thumbnailSrc?: string
     thumbnailAlt?: string
     technologies?: string
-    
 }
 
 function TabBody(props: TabBodyProps, onclick: Function): JSX.Element {
@@ -71,7 +82,6 @@ function TabBody(props: TabBodyProps, onclick: Function): JSX.Element {
         </div>
     )
 }
-
 
 function getTabProps(tabBodyProps: TabBodyProps): TabProps {
     const tabProps = {
@@ -103,7 +113,7 @@ export function TabView(props: TabBodyProps[]): JSX.Element {
 
     let tabs: JSX.Element[] = tabFactory(
         tabData,
-
+        // onclick
         (e: any) => {
             // get the clicked element, and its id
             let clickedElement = e.currentTarget
@@ -128,10 +138,13 @@ export function TabView(props: TabBodyProps[]): JSX.Element {
                 if (tabData[i].key == clickedId) {
                     let data = { ...tabData[i] }
                     data.key = makeid(5)
-                    // make the 'x' close the focused project
+                    // TODO: open tab animation.
                     setfocusedTab(TabBody(
                         data,
+                        // add onclick to close witht he 'x'
                         () => {
+                            // TODO: add the close animation
+                            clickedElement.classList.remove("selected-project")
                             setfocusedTab(null)
                             focusedTabKey = null
                         }

@@ -19,20 +19,20 @@
   background-color: black;
 }
 
-a:link {
+/* a:link {
   color: var(--secondary-color);
-}
+} */
 
 /* visited link */
-a:visited {
+/* a:visited {
   color: var(--quaternary-color);
-}
+} */
 
 /* mouse over link */
 
-a:hover {
+/* a:hover {
   color: var(--tertiary-color);
-}
+} */
 
 .text-align-left {
   text-align: left;
@@ -60,7 +60,6 @@ a:hover {
 
 .link-icon {
   font-size: .75em;
-
 }
 
 .link-img {
@@ -74,12 +73,10 @@ a::before {
   content: ' 🔗';
 }
 
-
 .text-wrapper {
   max-width: 50em;
   justify-content: left;
 }
-
 
 .img-wrapper {
   /* display: flex; */
@@ -91,8 +88,6 @@ a::before {
   align-self: flex-end;
   padding: 10px
 }
-
-
 
 .pageHeader h1 {
   margin: 0;
@@ -108,16 +103,10 @@ a::before {
   /* margin-right: 10px; */
 }
 
-
-
 .contact-info {
   display: flex;
   justify-content: space-around;
 }
-
-
-
-
 
 .projectCard-X {
   position: absolute;
@@ -125,10 +114,9 @@ a::before {
   width: 100%;
   text-align: right;
   /* padding: 10px; */
-  font-size: 1.25em;
-  
-  
+  font-size: 1.25em; 
 }
+
 .projectCard-X button {
   padding: 5px 10px 5px 10px;
   margin-right: 10px;
@@ -144,11 +132,11 @@ a::before {
   margin-right: 5px;
   padding-left: 10px;
   padding-right: 10px;
-  /* justify-content: space-around; */
-  /* margin-right: 20px; */
- 
 }
 
+.projectCard h3 {
+  color: rgb(84, 43, 212);
+}
 
 .projectCard-text-wrapper {
   max-width: 34em;
@@ -156,6 +144,9 @@ a::before {
   font-size: .9em;
   /* margin-right: 5px; */
 }
+/* .projectCard-text-wrapper h3 {
+  color: var(--secondary-color);
+} */
 
 .projectCard article {
   display: flex;
@@ -191,26 +182,22 @@ a::before {
   /* min-width: 20%; */
   border-radius: 10px;
   flex: 1 1 0px;
+  
 }
 
-
 .thumbnail img {
-  max-height: 150px;
+  max-height: 100px;
   max-width: 100%;
 }
 
 .thumbnail-container {
   display: flex;
   /* flex-grow: 1; */
-  
   justify-content: space-between;  
 }
 
 .projects-container {
-  
   display: flex;
-  
-  
   /* justify-content: space-between;   */
   flex-direction: column;
   /* flex-grow: 1; */
@@ -233,5 +220,12 @@ a::before {
 
 .selected-project {
   background-color: rgb(20, 34, 39);
+  color: var(--secondary-color);
   border-radius: 10px 10px 0px 0px;
+  
 }
+
+.text-large{
+  font-size: 2em;
+}
+

@@ -1,12 +1,21 @@
 {
     "projectMesh": {
         "title": "Mesh",
-        "description": "A webpage to go with an art installation",
+        "description": "An interactive webpage for an art installation",
         "technologies": "Technologies used: HTML, CSS, JavaScript",
-        "link": "https://github.com/enbielievable/mesh",
-        "about": "This utilizes JavaScript animations to create a interactive webpage to go along with a art exibit.",
+        "link": "https://enbielievable.github.io/mesh/",
+        "about": "Mesh is a collaborative effort between myself and the artist Lara Christen located in Cardiff, Wales, UK. It utilizes JavaScript animations to create an interactive webpage that supports an art exhibit on queer ecology.",
         "thumbnailSrc": "cover_mesh.png",
         "thumbnailAlt": "A black screen with white dots scattered across it, with the word mesh in the center"
+    },
+    "braveNW": {
+        "title": "BraveNW ",
+        "description": "Data Exploration for the New World MMO Game",
+        "technologies": "Technologies: HTML, CSS, JavaScript, Typescript, MongoDB, JavaScript, node.js, express.js",
+        "about": "BraveNW was created as a fan website for the New World MMORPG from Amazon Games, as a way to explore the complex economics of the game. At the website’s peak, it served over 10,000 users from around the globe a day with information about in-game probabilities and visualization tools to explore the in-game item networks. It also included preliminary functionality for organizing large scale 50v50 player-versus-player events for  the game.",
+        "link": "https://github.com/meissnereric/BraveNW",
+        "thumbnailSrc": "BraveNW-ss.png",
+        "thumbnailAlt": "A webpage with a list of catagories on the left side, and edge list at the bottom center, directions how to use it at the top center, and information about the selected edges on the right."
     },
     "projectBraveNW": {
         "title": "BraveNW",
@@ -28,16 +37,16 @@
     },
     "projectStatMiner": {
         "title": "StatMiner",
-        "description": "A Tesseract OCR implimentation used to extract data from Overwatch 2 scoreboards",
+        "description": "Computer Vision tool for extracting scores from Overwatch 2 ",
         "technologies": "Python, Tesseract 5, openCV",
         "link": "https://github.com/EvelynWelch/CSCI_2906_Final_Project",
-        "about": "A program that analyzes a video of someone playing Overwatch 2, looking for a scoreboard. If it detects a scoreboard has been displayed, it uses openCV and Tesseract to extract the data shown.",
+        "about": "StatMiner is a computer vision tool I built as my final year project. Built on Tesseract 5 and openCV, it analyzes videos of the popular game Overwatch 2 and extracts information from the in-game scoreboard for future use in data analytics.",
         "thumbnailSrc": "ow_scoreboard_more_boxes.png",
         "thumbnailAlt": "a picture of a Overwatch 2 scoreboard with boxes drawn around sections, and the numbers in those sections."
     },
     "aboutMeTab": {
         "title": "About Me",
-        "description": "A little bit about myself.",
+        "description": "A little bit about myself",
         "about": "Hi, I'm Evie, a passionate and skilled software developer with a flair for innovation and a strong commitment to collaboration. As a trans individual, I bring a unique perspective and diversity to the tech industry, driving me to create inclusive and forward-thinking solutions. I am a recent gratuate from Southwest Technical College's Software Development program, who has been casually coding for years. When I decided to turn coding into a career I registered at the local tech college to make sure there wasn't anything I missed, and have since graduated and am looking for my first job in the field."
         
     },
@@ -56,7 +65,8 @@
         "jobTitle": "Software Developer",
         "github": "https://github.com/EvelynWelch",
         "githubPersonal": "https://github.com/enbielievable",
-        "linkedinImgSrc": "LinkedIn-Logos/LI-Logo.png"
+        "linkedinImgSrc": "LinkedIn-Logos/LI-Logo.png",
+        "linkedin": "https://www.linkedin.com/in/evelyn-welch-405295248/"
         
     }
 }

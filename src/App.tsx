@@ -10,9 +10,10 @@ const data = require("./portfolioData");
 const projectCardData = [
   data.aboutMeTab,
   data.projectStatMiner,
-  data.projectBraveNW,
+  // data.projectBraveNW,
+  data.braveNW,
   data.projectMesh,
-  data.projectBraveNWdb
+  // data.projectBraveNWdb
 ]
 
 projectCardData.forEach(element => element.key = makeid(5))

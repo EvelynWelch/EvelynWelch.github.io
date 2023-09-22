@@ -1,7 +1,7 @@
 // A simple tabbed view react component.
 
+import { tab } from '@testing-library/user-event/dist/tab';
 import { useState } from 'react';
-import { forEachChild } from 'typescript';
 
 // create a random string of length n for unique id's
 function makeid(length: number): string {
@@ -38,9 +38,6 @@ function Tab(props: TabProps, onclick: Function): JSX.Element {
             
                 <h2 className='text-large'>{props.title}</h2>
             }
-
-            
-
         </div>
     )
 }
@@ -58,7 +55,7 @@ interface TabBodyProps {
 
 function TabBody(props: TabBodyProps, onclick: Function): JSX.Element {
     return (
-        <div className="projectCard">
+        <div className="projectCard fade-in">
             <div className='projectCard-X' onClick={e => onclick(e)}>
                 <button name="close-focused-project">X</button>
             </div>
@@ -104,6 +101,14 @@ function tabFactory(tabData: TabBodyProps[], onclick: Function): JSX.Element[] {
     return tabs
 }
 
+
+function startAnimation() {
+    const fadeInTarget = document.getElementById("fade-in-target")
+    fadeInTarget?.classList.remove("fade-in")
+    void fadeInTarget?.offsetWidth;
+    fadeInTarget?.classList.add("fade-in")
+}
+
 export function TabView(props: TabBodyProps[]): JSX.Element {
     // TODO: make the default the AboutMe?
     const [focusedTab, setfocusedTab] = useState<JSX.Element | null>(null)
@@ -111,44 +116,67 @@ export function TabView(props: TabBodyProps[]): JSX.Element {
     const tabData = props
     let focusedTabKey: string | null = null
 
+    // const fadeInTarget = document.getElementById("fade-in-target")
+    // fadeInTarget?.classList.remove("fade-in")
+    
     let tabs: JSX.Element[] = tabFactory(
         tabData,
         // onclick
         (e: any) => {
+            // setfocusedTab(null)
             // get the clicked element, and its id
             let clickedElement = e.currentTarget
             let clickedId = clickedElement.id
             focusedTabKey = clickedId
+            
+            
+            
+            console.log(focusedTab)
+            // add the selected-tab class
+            clickedElement.classList.add("selected-tab")
 
-            // add the selected-project class
-            clickedElement.classList.add("selected-project")
 
-            // make sure only one Tab is the "selected-project"
+           
+            // fadeInTarget?.classList.remove("fade-in")
+            // console.log(fadeInTarget?.classList)
+
+            // make sure only one Tab is the "selected-tab"
             tabData.forEach(element => {
                 if (element.key != clickedId) {
                     let elem = document.getElementById(element.key)
-                    if (elem!.classList.contains("selected-project")) {
-                        elem!.classList.remove("selected-project")
+                    if (elem!.classList.contains("selected-tab")) {
+                        elem!.classList.remove("selected-tab")
                     }
                 }
             })
 
             // find that id in tabs array and set it as the focused project 
             for (let i = 0; i < tabData.length; i++) {
+               
                 if (tabData[i].key == clickedId) {
                     let data = { ...tabData[i] }
                     data.key = makeid(5)
-                    // TODO: open tab animation.
-                    setfocusedTab(TabBody(
+                    // setfocusedTab(null)
+                    
+                    
+                    const tabBody = TabBody(
                         data,
                         // add onclick to close witht he 'x'
-                        () => {
+                        (e:any) => {
                             // TODO: add the close animation
-                            clickedElement.classList.remove("selected-project")
+                            // clickedElement.classList.remove("selected-tab")
+
                             setfocusedTab(null)
                             focusedTabKey = null
                         }
-                    ))
+                    )
+                    // TODO: open tab animation.
+                    // fadeInTarget?.classList.remove("fade-in")   
+                    
+                    setfocusedTab(tabBody)
+                    startAnimation()
+                    
+               
                     break;
                 }
             }
@@ -160,12 +188,15 @@ export function TabView(props: TabBodyProps[]): JSX.Element {
             <div className="thumbnail-container">
                 {tabs}
             </div>
-            <div className="">
+            <div id='fade-in-target'>
                 {focusedTab}
             </div>
+           
         </div>
     )
 
 }
+
+// Animations
 
 

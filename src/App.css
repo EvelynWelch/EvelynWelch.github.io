@@ -132,6 +132,18 @@ a::before {
   margin-right: 5px;
   padding-left: 10px;
   padding-right: 10px;
+  
+  
+}
+
+.fade-in {
+  animation-name: open-tab;
+  animation-duration: .5s;
+}
+
+@keyframes open-tab {
+  from {opacity: 0%;}
+  to {opacity: 100%;}
 }
 
 .projectCard h3 {
@@ -162,14 +174,14 @@ a::before {
 .contact-info span {
   padding: 5px 5px 5px 5px;
 }
-.aboutMe {
-  text-align: left;
-}
-.aboutMe-button {
-  /* background-color: black; */
-  padding-top: 5px;
-  /* padding: 10px; */
-}
+
+
+
+
+
+
+
+
 
 .thumbnail {
   text-align: center;
@@ -182,8 +194,26 @@ a::before {
   /* min-width: 20%; */
   border-radius: 10px;
   flex: 1 1 0px;
-  
+
 }
+
+.selected-tab {
+  /* background-color: rgb(20, 34, 39); */
+  color: var(--secondary-color);
+  border-radius: 10px 10px 0px 0px;
+  animation-name: clicked-thumbnail;
+  animation-duration: 0.5s;
+  background-color: rgb(20, 34, 39);
+}
+
+@keyframes clicked-thumbnail {
+  from {background-color: black;}
+  to {background-color: rgb(20, 34, 39);}
+}
+
+
+
+
 
 .thumbnail img {
   max-height: 100px;
@@ -218,14 +248,20 @@ a::before {
   width: 0px;
 }
 
-.selected-project {
-  background-color: rgb(20, 34, 39);
-  color: var(--secondary-color);
-  border-radius: 10px 10px 0px 0px;
-  
-}
+
 
 .text-large{
   font-size: 2em;
 }
 
+/* old? */
+
+
+.aboutMe {
+  text-align: left;
+}
+.aboutMe-button {
+  /* background-color: black; */
+  padding-top: 5px;
+  /* padding: 10px; */
+}

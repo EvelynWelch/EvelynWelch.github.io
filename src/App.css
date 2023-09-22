@@ -146,6 +146,16 @@ a::before {
   to {opacity: 100%;}
 }
 
+.fade-out {
+  animation-name: close-tab;
+  animation-duration: .5s;
+}
+
+@keyframes close-tab {
+  from {opacity: 100%;}
+  to {opacity: 0%;}
+}
+
 .projectCard h3 {
   color: rgb(84, 43, 212);
 }

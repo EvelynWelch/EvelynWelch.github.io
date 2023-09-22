@@ -102,11 +102,11 @@ function tabFactory(tabData: TabBodyProps[], onclick: Function): JSX.Element[] {
 }
 
 
-function startAnimation() {
-    const fadeInTarget = document.getElementById("fade-in-target")
-    fadeInTarget?.classList.remove("fade-in")
+function startAnimation(animation: string) {
+    const fadeInTarget = document.getElementById("fade-target")
+    fadeInTarget?.classList.remove(animation)
     void fadeInTarget?.offsetWidth;
-    fadeInTarget?.classList.add("fade-in")
+    fadeInTarget?.classList.add(animation)
 }
 
 export function TabView(props: TabBodyProps[]): JSX.Element {
@@ -116,7 +116,7 @@ export function TabView(props: TabBodyProps[]): JSX.Element {
     const tabData = props
     let focusedTabKey: string | null = null
 
-    // const fadeInTarget = document.getElementById("fade-in-target")
+    // const fadeInTarget = document.getElementById("fade-target")
     // fadeInTarget?.classList.remove("fade-in")
     
     let tabs: JSX.Element[] = tabFactory(
@@ -164,7 +164,7 @@ export function TabView(props: TabBodyProps[]): JSX.Element {
                         // add onclick to close witht he 'x'
                         (e:any) => {
                             // TODO: add the close animation
-                            // clickedElement.classList.remove("selected-tab")
+                            clickedElement.classList.remove("selected-tab")
 
                             setfocusedTab(null)
                             focusedTabKey = null
@@ -174,7 +174,7 @@ export function TabView(props: TabBodyProps[]): JSX.Element {
                     // fadeInTarget?.classList.remove("fade-in")   
                     
                     setfocusedTab(tabBody)
-                    startAnimation()
+                    startAnimation("fade-in")
                     
                
                     break;
@@ -188,7 +188,7 @@ export function TabView(props: TabBodyProps[]): JSX.Element {
             <div className="thumbnail-container">
                 {tabs}
             </div>
-            <div id='fade-in-target'>
+            <div id='fade-target'>
                 {focusedTab}
             </div>
            

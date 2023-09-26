@@ -11,7 +11,7 @@
     "braveNW": {
         "title": "BraveNW ",
         "description": "Data Exploration for the New World MMO Game",
-        "technologies": "Technologies: HTML, CSS, JavaScript, Typescript, MongoDB, JavaScript, node.js, express.js",
+        "technologies": "Technologies: HTML, CSS, JavaScript, Typescript, MongoDB, node.js, express.js",
         "about": "BraveNW was created as a fan website for the New World MMORPG from Amazon Games, as a way to explore the complex economics of the game. At the website’s peak, it served over 10,000 users from around the globe a day with information about in-game probabilities and visualization tools to explore the in-game item networks. It also included preliminary functionality for organizing large scale 50v50 player-versus-player events for  the game.",
         "link": "https://github.com/meissnereric/BraveNW",
         "thumbnailSrc": "BraveNW-ss.png",

@@ -2,7 +2,7 @@
     "projectMesh": {
         "title": "Mesh",
         "description": "An interactive webpage for an art installation",
-        "technologies": "Technologies used: HTML, CSS, JavaScript",
+        "technologies": "HTML, CSS, JavaScript",
         "link": "https://enbielievable.github.io/mesh/",
         "about": "Mesh is a collaborative effort between myself and the artist Lara Christen located in Cardiff, Wales, UK. It utilizes JavaScript animations to create an interactive webpage that supports an art exhibit on queer ecology.",
         "thumbnailSrc": "cover_mesh.png",
@@ -11,7 +11,7 @@
     "braveNW": {
         "title": "BraveNW ",
         "description": "Data Exploration for the New World MMO Game",
-        "technologies": "Technologies: HTML, CSS, JavaScript, Typescript, MongoDB, node.js, express.js",
+        "technologies": "HTML, CSS, JavaScript, Typescript, MongoDB, node.js, express.js",
         "about": "BraveNW was created as a fan website for the New World MMORPG from Amazon Games, as a way to explore the complex economics of the game. At the website’s peak, it served over 10,000 users from around the globe a day with information about in-game probabilities and visualization tools to explore the in-game item networks. It also included preliminary functionality for organizing large scale 50v50 player-versus-player events for  the game.",
         "link": "https://github.com/meissnereric/BraveNW",
         "thumbnailSrc": "BraveNW-ss.png",
@@ -66,7 +66,6 @@
         "github": "https://github.com/EvelynWelch",
         "githubPersonal": "https://github.com/enbielievable",
         "linkedinImgSrc": "LinkedIn-Logos/LI-Logo.png",
-        "linkedin": "https://www.linkedin.com/in/evelyn-welch-405295248/"
-        
+        "linkedin": "https://www.linkedin.com/in/evelyn-welch-405295248/"    
     }
 }

@@ -64,9 +64,9 @@ function TabBody(props: TabBodyProps, onclick: Function): JSX.Element {
                     {props.link != null &&
                         <h2><a href={props.link}>{props.title} </a></h2>
                     }
-                    <h3>{props.description}</h3>
+                    <h3 className='tertiary-color'>{props.description}</h3>
                     {props.technologies != null &&
-                        <p>{props.technologies}</p>
+                        <p className='secondary-color'>{props.technologies}</p>
                     }
                     <p>{props.about}</p>
                 </div>

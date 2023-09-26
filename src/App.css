@@ -13,6 +13,19 @@
   --background-color: rgb(29, 26, 26);
 }
 
+.primary-color {
+  color: var(--primary-color)
+}
+.secondary-color {
+  color: var(--secondary-color)
+}
+.tertiary-color{
+  color: var(--tertiary-color)
+}
+.quaternary-color {
+  color: var(--quaternary-color)
+}
+
 :root {
   background-color: var(--background-color);
   font-size: 1.5em;
@@ -156,9 +169,7 @@ a::before {
   to {opacity: 0%;}
 }
 
-.projectCard h3 {
-  color: rgb(84, 43, 212);
-}
+
 
 .projectCard-text-wrapper {
   max-width: 34em;
